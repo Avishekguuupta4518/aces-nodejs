@@ -6,7 +6,7 @@ const blogSchema = new schema({
   title: String,
   subtitle: String,
   description: String,
-});
+},{timestamps:true});
 
 const Blog = mongoose.model("Blog", blogSchema);
 module.exports = Blog; //try this again
