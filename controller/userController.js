@@ -16,6 +16,7 @@ async function aboutPage(req, res) {
   });
 }
 
+
 async function fetchUser(req, res) {
   const data = await User.find();
   res.json({
@@ -26,7 +27,7 @@ async function fetchUser(req, res) {
 async function fetchBlog(req, res) {
   const blog = await Blog.find();
   res.json({
-    blog,
+    blog : blog,
   });
 }
 
@@ -35,7 +36,7 @@ async function register(req, res) {
   await User.create({
     name: name,
     email: email,
-    password: bcrypt.hashSync(password, 10), // 10 = salt
+    password: bcrypt.hashSync(password, 10) // 10 = salt
   });
   res.json({
     msg: "data created successfully...",
@@ -149,6 +150,8 @@ async function updateUser(req, res) {
     data: data,
   });
 }
+
+
 async function login(req, res) {
   const email = req.body.email;
   const password = req.body.password;

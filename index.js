@@ -11,7 +11,6 @@ const app = express();
 app.use(express.json()); // middleware
 app.use(cookieParser());
 
-
 app.get("/",homePage)
 app.get("/about", aboutPage)
 app.get("/fetch-users", fetchUser)
@@ -29,10 +28,6 @@ app.patch("/update-user", updateUser)
 app.post("/login", login)
 
 
-
 app.listen(process.env.PORT, function () {
   console.log("server has started at port 8080");
 });
-
-
-
